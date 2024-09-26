@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DressTalk E-Commerce website</title>
+    <!-- favicon -->
+    <link rel="icon"
+        href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo"
+        type="image/gif" sizes="16x16">
+    <!-- EXTERNAL LINKS -->
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">DressTalk</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/cart">Cart (<span id="cart-count">
+                            <%= cart.length %>
+                        </span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div id="containerSlider">
+            <div id="slidingImage"> <img src="imgs/img1.png" alt="image1"> </div>
+            <div id="slidingImage"> <img src="imgs/img2.png" alt="image2"> </div>
+            <div id="slidingImage"> <img src="imgs/img3.png" alt="image3"> </div>
+            <div id="slidingImage"> <img src="imgs/img4.png" alt="image4"> </div>
+        </div>
+    </section>
+
+
+
+    <!-- Main content -->
+    <section id="shop">
+        <h2>Clothing for men & women</h2>
+        <div class="product-container">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="img/img-1.png" alt="Product 1">
+                <h3>H&M OffWhite Sweatshirt</h3>
+                <p>$10.00</p>
+                <button class="add-to-cart btn-1" data-image="img-1.png" data-product="H&M OffWhite Sweatshirt"
+                    data-price="10">Add to Cart</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="img/img-2.png" alt="Product 2">
+                <h3>Cute Mini Skirt</h3>
+                <p>$10.00</p>
+                <button class="add-to-cart btn-1" data-image="img-2.png" data-product="Cute Mini Skirt"
+                    data-price="10">Add to Cart</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="img/img-3.png" alt="Product 3">
+                <h3>full dress for ladies</h3>
+                <p>$10.00</p>
+                <button class="add-to-cart btn-1" data-image="img-3.png" data-product="full dress for ladies"
+                    data-price="10">Add to Cart</button>
+            </div>
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="img/img-4.png" alt="Product 4">
+                <h3>Black Valcro Blazer</h3>
+                <p>$10.00</p>
+                <button class="add-to-cart btn-1" data-image="img-4.png" data-product="Black Valcro Blazer"
+                    data-price="10">Add to Cart</button>
+            </div>
+            <!-- Product 5 -->
+            <div class="product">
+                <img src="img/img-5.png" alt="Product 5">
+                <h3>Gray formal shirt</h3>
+                <p>$20.00</p>
+                <button class="add-to-cart btn-1" data-image="img-5.png" data-product="Gray formal shirt"
+                    data-price="20">Add to Cart</button>
+            </div>
+            <!-- Product 6 -->
+            <div class="product">
+                <img src="img/img-6.png" alt="Product 6">
+                <h3>H&M black Winter Sweatshirt</h3>
+                <p>$30.00</p>
+                <button class="add-to-cart btn-1" data-image="img-6.png" data-product="H&M black Winter Sweatshirt"
+                    data-price="30">Add to Cart</button>
+            </div>
+        </div>
+        <h2>Accessorries</h2>
+        <div class="product-container">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="img/img-7.jpg" alt="Product 1">
+                <h3>Real Gold Bracelet</h3>
+                <p>$10.00</p>
+                <button class="add-to-cart btn-1" data-image="img-7.jpg" data-product="Real Gold Bracelet"
+                    data-price="10">Add to Cart</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="img/img-8.jpg" alt="Product 1">
+                <h3>Zara Hills for women</h3>
+                <p>$10.00</p>
+                <button class="add-to-cart btn-1" data-image="img-8.jpg" data-product="Zara Hills for women"
+                    data-price="10">Add to Cart</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="img/img-9.jpg" alt="Product 1">
+                <h3>Violet Blossom</h3>
+                <p>$10.00</p>
+                <button class="add-to-cart btn-1" data-image="img-9.jpg" data-product="Violet Blossom"
+                    data-price="10">Add to Cart</button>
+            </div>
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="img/img-10.jpg" alt="Product 1">
+                <h3>Zara handbag for women</h3>
+                <p>$10.00</p>
+                <button class="add-to-cart btn-1" data-image="img-10.jpg" data-product="Zara handbag for women"
+                    data-price="10">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; pratyush 2024 DressTalk. All rights reserved.</p>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#containerSlider').slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+        });
+    </script>
+    <script>
+        const addtocartButtons = document.querySelectorAll('.add-to-cart');
+        const cartCounter = document.getElementById('cart-count');
+
+        addtocartButtons.forEach((button) => {
+            button.addEventListener('click', async () => {
+                const name = button.getAttribute("data-product");
+                const price = parseFloat(button.getAttribute("data-price"));
+                const img = button.getAttribute("data-image")
+
+                try {
+                    const response = await fetch("/add-to-cart", {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            name: name,
+                            price: price,
+                            img: img,
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Failed to add product to cart.');
+                    }
+
+                    const result = await response.json();
+                    cartCounter.innerHTML = result;
+
+                    console.log(result);
+
+                    alert(`${name} has been added to cart`);
+                } catch (err) {
+                    alert(err.message);
+                }
+            });
+        });
+
+    </script>
+    
+</body>
+
+</html>

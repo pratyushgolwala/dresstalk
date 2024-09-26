@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--divinectorweb.com-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cart-DressTalk</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        type="text/css">
+    <link href="cart.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/#shop">Shop</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <div class="wrapper cart">
+        <h1>Shopping Cart</h1>
+
+        <div class="project">
+            <div class="shop1">
+                <% if (cart.length==0) { %>
+                    <div class="box content">
+                        <p>There are no items in the cart</p>
+                    </div>
+                    <% } else { %>
+                        <% cart.forEach((product)=> { %>
+                            <div class="box content">
+                                <img src="<%=product.img%>" alt="<%= product.name %>">
+                                <h3>
+                                    <%= product.name %>
+                                </h3>
+                                <h4>Price: <%= product.price %>
+                                </h4>
+                                <p class="unit">
+                                    Quantity:
+                                    <input type="number" value="<%= product.quantity %>" min="1"
+                                        data-name="<%= product.name %>" class="quantity-input">
+                                </p>
+                            
+                                    
+                                    <button class="btn2 btn-area" data-name="<%= product.name %>"><i class="fa fa-trash"></i> Remove</button>
+                                
+
+                            </div>
+                            <% }) %>
+                                <% } %>
+            </div>
+        </div>
+
+    </div>
+    <div class="right-bar">
+
+        <% let subtotal=0; %>
+            <% cart.forEach((product)=> { %>
+                <% subtotal +=product.price * product.quantity; %>
+                    <% }) %>
+
+                        <% let tax=(subtotal * 0.05).toFixed(2); %>
+                            <% let shipping=10; %>
+                                <% let total=(parseFloat(subtotal) + parseFloat(tax) + shipping).toFixed(2); %>
+
+                                    <p><span>Subtotal</span> <span>$<%= subtotal.toFixed(2) %></span></p>
+                                    <hr>
+                                    <p><span>Tax (5%)</span> <span>$<%= tax %></span></p>
+                                    <hr>
+                                    <p><span>Shipping</span> <span>$<%= shipping %></span></p>
+                                    <hr>
+                                    <p><span>Total</span> <span>$<%= total %></span></p>
+                                    <a href="/"><i class="fa fa-shopping-cart"></i> Checkout</a>
+
+                                    
+    </div>
+
+
+    <script>
+        const remButton = document.querySelectorAll('.btn2');
+        remButton.forEach((button) => {
+            button.addEventListener('click', async () => {
+                // Get the product name from the button's data attribute
+                const productName = button.getAttribute('data-name');
+
+                // Send a request to remove the product from the cart
+                try{
+
+                    const response = await fetch('/remove-from-cart', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ 
+                            name: productName 
+                        })
+                    });
+                    if(!response.ok){
+                        throw new Error('item not found');
+                    }
+                    const result = await response.json();
+
+                    alert("Removed Item from cart");
+
+                    location.reload();
+
+                }catch(err){
+                    alert(err)
+                }
+
+                    
+            });
+        });
+
+    </script>
+    
+</body>
+
+</html>
